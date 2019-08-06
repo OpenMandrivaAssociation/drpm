@@ -21,7 +21,7 @@ BuildRequires:  pkgconfig(openssl)
 
 BuildRequires:  cmake >= 2.8
 BuildRequires:  pkgconfig(cmocka) >= 1.0
-%ifnarch aarch64
+%ifnarch %{armx} %{riscv}
 BuildRequires:  valgrind
 %endif
 BuildRequires:  doxygen
