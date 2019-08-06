@@ -60,11 +60,6 @@ pushd ./build
 %make_install
 popd
 
-%check
-pushd ./build
-ctest -VV
-popd
-
 %files -n %{libname}
 %{_libdir}/libdrpm.so.%{major}
 %{_libdir}/libdrpm.so.%{major}.*
