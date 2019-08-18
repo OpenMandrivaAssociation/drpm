@@ -5,20 +5,20 @@
 %define libname_devel %mklibname -d %name
 
 Name:           drpm
-Version:        0.3.0
-Release:        %mkrel 3
+Version:        0.4.0
+Release:        1
 Summary:        A small library for fetching information from DeltaRPM packages
 Group:          System/Libraries
 License:        LGPLv3+
 URL:            http://fedorahosted.org/%{name}
 Source0:        http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
 
-BuildRequires:  rpm-devel
+BuildRequires:  pkgconfig(rpm)
 BuildRequires:  pkgconfig(zlib)
-BuildRequires:  bzip2-devel
-BuildRequires:  lzma-devel
+BuildRequires:  pkgconfig(bzip2)
+BuildRequires:  pkgconfig(liblzma)
 BuildRequires:  pkgconfig(openssl)
-
+BuildRequires:  pkgconfig(libzstd)
 BuildRequires:  cmake >= 2.8
 BuildRequires:  pkgconfig(cmocka) >= 1.0
 %ifnarch %{armx} %{riscv}
@@ -49,16 +49,16 @@ information from DeltaRPM packages.
 This package provides a C interface (drpm.h) for the drpm library.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DINCLUDE_INSTALL_DIR=%{_includedir}
+%cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DINCLUDE_INSTALL_DIR=%{_includedir} -DWITH_ZSTD:BOOL=ON
 %make_build
 
 %install
-pushd ./build
+cd ./build
 %make_install
-popd
+cd -
 
 %files -n %{libname}
 %{_libdir}/libdrpm.so.%{major}
