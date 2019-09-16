@@ -62,7 +62,7 @@ cd -
 %files -n %{libname}
 %{_libdir}/libdrpm.so.%{major}
 %{_libdir}/libdrpm.so.%{major}.*
-%license COPYING COPYING.LESSER
+%license COPYING
 
 %files -n %{libname_devel}
 %{_libdir}/libdrpm.so
