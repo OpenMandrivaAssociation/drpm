@@ -4,38 +4,37 @@
 %define libname %mklibname %name %major
 %define libname_devel %mklibname -d %name
 
-Name:           drpm
-Version:        0.4.0
-Release:        1
-Summary:        A small library for fetching information from DeltaRPM packages
-Group:          System/Libraries
-License:        LGPLv3+
-URL:            http://fedorahosted.org/%{name}
-Source0:        http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
-
-BuildRequires:  pkgconfig(rpm)
-BuildRequires:  pkgconfig(zlib)
-BuildRequires:  pkgconfig(bzip2)
-BuildRequires:  pkgconfig(liblzma)
-BuildRequires:  pkgconfig(openssl)
-BuildRequires:  pkgconfig(libzstd)
-BuildRequires:  cmake >= 2.8
-BuildRequires:  pkgconfig(cmocka) >= 1.0
+Name:		drpm
+Version:	0.4.1
+Release:	1
+Summary:	A small library for fetching information from DeltaRPM packages
+Group:		System/Libraries
+License:	LGPLv3+
+URL:		http://fedorahosted.org/%{name}
+Source0:	http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
+BuildRequires:	pkgconfig(rpm)
+BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(bzip2)
+BuildRequires:	pkgconfig(liblzma)
+BuildRequires:	pkgconfig(openssl)
+BuildRequires:	pkgconfig(libzstd)
+BuildRequires:	cmake >= 2.8
+BuildRequires:	pkgconfig(cmocka) >= 1.0
 %ifnarch %{armx} %{riscv}
-BuildRequires:  valgrind
+BuildRequires:	valgrind
 %endif
-BuildRequires:  doxygen
+BuildRequires:	doxygen
 
 %package -n %{libname}
-Summary:        A small library for fetching information from DeltaRPM packages
-Group:          System/Libraries
+Summary:	A small library for fetching information from DeltaRPM packages
+Group:		System/Libraries
 
 %package -n %{libname_devel}
-Summary:        C interface for the drpm library
-Group:          Development/C
-Provides:       %{name}-devel%{?_isa} = %{version}-%{release}
-Provides:       %{name}-devel = %{version}-%{release}
-Requires:       %{libname}%{?_isa} = %{version}-%{release}
+Summary:	C interface for the drpm library
+Group:		Development/C
+Provides:	%{name}-devel%{?_isa} = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname}%{?_isa} = %{version}-%{release}
 
 %description
 The drpm package provides a small library allowing one to fetch
