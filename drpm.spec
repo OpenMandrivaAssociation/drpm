@@ -6,10 +6,10 @@
 
 Name:		drpm
 Version:	0.4.1
-Release:	1
+Release:	2
 Summary:	A small library for fetching information from DeltaRPM packages
 Group:		System/Libraries
-License:	LGPLv3+
+License:	LGPLv2+
 URL:		http://fedorahosted.org/%{name}
 Source0:	http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(rpm)
