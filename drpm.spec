@@ -5,13 +5,13 @@
 %define libname_devel %mklibname -d %name
 
 Name:		drpm
-Version:	0.4.1
-Release:	2
+Version:	0.5.0
+Release:	1
 Summary:	A small library for fetching information from DeltaRPM packages
 Group:		System/Libraries
 License:	LGPLv2+
-URL:		http://fedorahosted.org/%{name}
-Source0:	http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
+URL:		https://github.com/rpm-software-management/%{name}
+Source0:	https://github.com/rpm-software-management/%{name}/releases/download/%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(rpm)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(bzip2)
