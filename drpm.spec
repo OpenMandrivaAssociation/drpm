@@ -5,8 +5,8 @@
 %define libname_devel %mklibname -d %name
 
 Name:		drpm
-Version:	0.5.1
-Release:	2
+Version:	0.5.2
+Release:	1
 Summary:	A small library for fetching information from DeltaRPM packages
 Group:		System/Libraries
 License:	LGPLv2+
