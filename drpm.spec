@@ -1,12 +1,13 @@
 %global _hardened_build 1
 
 %define major 0
-%define libname %mklibname %name %major
+%define oldlibname %mklibname %name 0
+%define libname %mklibname %name
 %define libname_devel %mklibname -d %name
 
 Name:		drpm
 Version:	0.5.2
-Release:	1
+Release:	2
 Summary:	A small library for fetching information from DeltaRPM packages
 Group:		System/Libraries
 License:	LGPLv2+
@@ -28,6 +29,7 @@ BuildRequires:	doxygen
 %package -n %{libname}
 Summary:	A small library for fetching information from DeltaRPM packages
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %package -n %{libname_devel}
 Summary:	C interface for the drpm library
