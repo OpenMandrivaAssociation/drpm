@@ -7,7 +7,7 @@
 
 Name:		drpm
 Version:	0.5.2
-Release:	2
+Release:	3
 Summary:	A small library for fetching information from DeltaRPM packages
 Group:		System/Libraries
 License:	LGPLv2+
